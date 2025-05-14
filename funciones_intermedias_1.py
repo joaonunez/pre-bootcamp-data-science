@@ -1,26 +1,36 @@
-# 1. Actualizar valores en diccionarios y listas
+# funciones_intermedias_1.py
 
-matriz = [ [10, 15, 20], [3, 7, 14] ]
+# 1. ACTUALIZAR VALORES EN DICCIONARIOS Y LISTAS
+print("1. Actualizar valores en estructuras:")
+
+matriz = [[10, 15, 20], [3, 7, 14]]
+print("Matriz original:", matriz)
 matriz[1][0] = 6  # Cambiar 3 por 6
+print("Matriz actualizada:", matriz)
 
 cantantes = [
     {"nombre": "Ricky Martin", "pais": "Puerto Rico"},
     {"nombre": "Chayanne", "pais": "Puerto Rico"}
 ]
-cantantes[0]["nombre"] = "Enrique Martin Morales"  # Cambiar nombre
+print("\nCantantes original:", cantantes)
+cantantes[0]["nombre"] = "Enrique Martin Morales"
+print("Cantantes actualizado:", cantantes)
 
 ciudades = {
     "México": ["Ciudad de México", "Guadalajara", "Cancún"],
     "Chile": ["Santiago", "Concepción", "Viña del Mar"]
 }
-ciudades["México"][2] = "Monterrey"  # Cambiar Cancún por Monterrey
+print("\nCiudades original:", ciudades)
+ciudades["México"][2] = "Monterrey"
+print("Ciudades actualizado:", ciudades)
 
-coordenadas = [
-    {"latitud": 8.2588997, "longitud": -84.9399704}
-]
-coordenadas[0]["latitud"] = 9.9355431  # Cambiar latitud
+coordenadas = [{"latitud": 8.2588997, "longitud": -84.9399704}]
+print("\nCoordenadas original:", coordenadas)
+coordenadas[0]["latitud"] = 9.9355431
+print("Coordenadas actualizado:", coordenadas)
 
-# 2. Iterar a través de una lista de diccionarios
+# 2. ITERAR A TRAVÉS DE UNA LISTA DE DICCIONARIOS
+print("\n2. Iterar a través de una lista de diccionarios:")
 
 def iterarDiccionario(lista):
     for diccionario in lista:
@@ -29,14 +39,31 @@ def iterarDiccionario(lista):
             linea.append(f"{clave} - {valor}")
         print(", ".join(linea))
 
-# 3. Obtener valores de una lista de diccionarios
+cantantes = [
+    {"nombre": "Ricky Martin", "pais": "Puerto Rico"},
+    {"nombre": "Chayanne", "pais": "Puerto Rico"},
+    {"nombre": "José José", "pais": "México"},
+    {"nombre": "Juan Luis Guerra", "pais": "República Dominicana"}
+]
+
+iterarDiccionario(cantantes)
+
+# 3. OBTENER VALORES DE UNA LISTA DE DICCIONARIOS
+print("\n3. Obtener valores por clave desde lista de diccionarios:")
 
 def iterarDiccionario2(llave, lista):
     for diccionario in lista:
         if llave in diccionario:
             print(diccionario[llave])
 
-# 4. Iterar a través de un diccionario con valores de lista
+print("Nombres:")
+iterarDiccionario2("nombre", cantantes)
+
+print("\nPaíses:")
+iterarDiccionario2("pais", cantantes)
+
+# 4. ITERAR A TRAVÉS DE UN DICCIONARIO CON VALORES DE LISTA
+print("\n4. Imprimir información de un diccionario con listas:")
 
 def imprimirInformacion(diccionario):
     for clave, lista in diccionario.items():
@@ -44,3 +71,10 @@ def imprimirInformacion(diccionario):
         for valor in lista:
             print(valor)
         print()  # Línea en blanco entre bloques
+
+costa_rica = {
+    "ciudades": ["San José", "Limón", "Cartago", "Puntarenas"],
+    "comidas": ["gallo pinto", "casado", "tamales", "chifrijo", "olla de carne"]
+}
+
+imprimirInformacion(costa_rica)
